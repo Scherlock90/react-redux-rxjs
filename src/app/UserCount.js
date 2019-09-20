@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { actions } from '../store';
-import { CounterDataSources, counter$ } from '../services/simply-counter';
+import { useSubscribe, counter$ } from '../services/simply-counter';
 
 function UserCount() {
     const dispatch = useDispatch();
@@ -9,7 +9,7 @@ function UserCount() {
         userCount: state.userCount,
         counter: state.counter
     }));
-    const counterValue = CounterDataSources(counter$);
+    const counterValue = useSubscribe(counter$);
 
     function counterHandler() {
         // dispatch(actions.counter())

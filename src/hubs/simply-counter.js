@@ -26,12 +26,12 @@ function getActionHandler() {
 function bindActions() {
     SimplyCounter.CounterDataSources
         .subscribe(
-            count => getActionHandler().counter(count)
+            count => getActionHandler().onUserCountChanged()
         );
 }
 
 export function init(store) {
     console.log('hub simply-counter init');
     createActionHandler(store);
-    // bindActions();
+    bindActions();
 }
