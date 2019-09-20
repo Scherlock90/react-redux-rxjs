@@ -12,7 +12,7 @@ function UserCount() {
     const counterValue = CounterDataSources(counter$);
 
     function counterHandler() {
-        dispatch(actions.counter())
+        // dispatch(actions.counter())
         const rxjsCounter = counter$.next(counterValue + 1)
     }
 

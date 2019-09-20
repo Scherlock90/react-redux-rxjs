@@ -4,7 +4,7 @@ import { BaseActionHandler } from './_base';
 
 export function initHubs(store) {
     UserCount.init(store);
-    // SimplyCounter.init(store);
+    SimplyCounter.init(store);
 }
 
 export {
