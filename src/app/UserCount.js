@@ -1,21 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { BehaviorSubject } from 'rxjs';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { actions } from '../store';
-
-const counter$ = new BehaviorSubject(0);
-
-function useSubscribe(observable$) {
-    const [value, update] = useState();
-
-    useEffect(() => {
-        const subscribeValue = observable$.subscribe(update)
-        return () => subscribeValue.unsubscribe();
-    }, [observable$]);
-
-    return value;
-}
-
+import { CounterDataSources, counter$ } from '../services/simply-counter';
 
 function UserCount() {
     const dispatch = useDispatch();
@@ -23,7 +9,7 @@ function UserCount() {
         userCount: state.userCount,
         counter: state.counter
     }));
-    const counterValue = useSubscribe(counter$);
+    const counterValue = CounterDataSources(counter$);
 
     function counterHandler() {
         dispatch(actions.counter())

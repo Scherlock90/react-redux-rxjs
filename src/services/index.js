@@ -3,7 +3,7 @@ import * as SimplyCounter from './simply-counter';
 
 export function initServices() {
     UserCount.init();
-    SimplyCounter.init();
+    // SimplyCounter.CounterDataSources();
 }
 
 export {
