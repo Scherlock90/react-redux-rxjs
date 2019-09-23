@@ -4,7 +4,6 @@ import { actions } from '../store';
 import { useSubscribe, counter$ } from '../services/simply-counter';
 
 function UserCount() {
-    const dispatch = useDispatch();
     const testingCounter = useSelector(state => ({
         userCount: state.userCount,
         counter: state.counter
@@ -12,21 +11,20 @@ function UserCount() {
     const counterValue = useSubscribe(counter$);
 
     function counterHandler() {
-        // dispatch(actions.counter())
         const rxjsCounter = counter$.next(counterValue + 1)
     }
 
     return (
         <div>
-            <button onClick={e => counterHandler(e)}>Kliknij mnie!</button>
+            <button onClick={e => counterHandler(e)}>Clik Me!</button>
             <div>
-                Obecnie mamy tylu uzytkownikow: {testingCounter.userCount}.
+                Currnet user's: {testingCounter.userCount}.
             </div>
             <div>
-                Dane z rxjs: {counterValue}
+                Date to rxjs: {counterValue}
             </div>
             <div>
-                Dane z redux: {testingCounter.counter}
+                DAte to redux-rxjs: {testingCounter.counter}
             </div>
         </div>
     )
