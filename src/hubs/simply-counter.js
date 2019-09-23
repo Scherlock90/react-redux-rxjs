@@ -7,7 +7,7 @@ class CounterActionHandler extends BaseActionHandler {
      * @param {number} count 
      */
     onCount(count) {
-        this.store.dispatch(actions.addCount(count));
+        this.store.dispatch(actions.onCountWithRxjs(count));
     }
 }
 
