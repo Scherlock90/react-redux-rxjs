@@ -1,6 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { actions } from '../store';
+import { useSelector } from 'react-redux';
 import { useSubscribe, counter$ } from '../hooks/simply-counter';
 
 function UserCount() {
