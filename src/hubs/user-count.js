@@ -23,9 +23,10 @@ function getActionHandler() {
 }
 
 function bindActions() {
-    UserCount.UserCountDataSource.subscribe(
-        count => getActionHandler().onUserCountChanged(count)
-    );
+    UserCount.UserCountDataSource
+        .subscribe(
+            count => getActionHandler().onUserCountChanged(count)
+        );
 }
 
 export function init(store) {

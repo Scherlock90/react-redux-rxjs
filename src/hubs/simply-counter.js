@@ -1,4 +1,4 @@
-import { SimplyCounter } from '../services';
+import { SimplyCounter } from '../hooks';
 import { actions } from '../store';
 import { BaseActionHandler } from './_base';
 
