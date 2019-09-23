@@ -1,7 +1,6 @@
 import {
     USER_COUNT_CHANGED,
-    ADD_COUNT,
-    DELETE_COUNT
+    COUNT
 } from './actionTypes';
 
 export function userCountChanged(count) {
@@ -9,5 +8,5 @@ export function userCountChanged(count) {
 }
 
 export function onCountWithRxJS(count) {
-    return { type: ADD_COUNT, payload: count }
+    return { type: COUNT, payload: count }
 }
