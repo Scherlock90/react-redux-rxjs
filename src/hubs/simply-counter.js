@@ -25,9 +25,7 @@ function getActionHandler() {
 function bindActions() {
     SimplyCounter.CounterDataSources
         .subscribe(
-            count => {
-                getActionHandler().onCount(count);
-            }
+            count => getActionHandler().onCount(count)
         );
 }
 
