@@ -6,8 +6,8 @@ class CounterActionHandler extends BaseActionHandler {
     /**
      * @param {number} count 
      */
-    onUserCountChanged(count) {
-        this.store.dispatch(actions.counter(count));
+    onCount(count) {
+        this.store.dispatch(actions.addCount(count));
     }
 }
 
@@ -25,7 +25,9 @@ function getActionHandler() {
 function bindActions() {
     SimplyCounter.CounterDataSources
         .subscribe(
-            count => getActionHandler().onUserCountChanged(count)
+            count => {
+                getActionHandler().onCount(count);
+            }
         );
 }
 

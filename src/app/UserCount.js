@@ -10,13 +10,18 @@ function UserCount() {
 
     const counterValue = useSubscribe(counter$);
 
-    function counterHandler() {
-        const rxjsCounter = counter$.next(counterValue + 1)
+    function addCounterHandler() {
+        const addCounter = counter$.next(counterValue + 1)
+    }
+
+    function deleteCounterHandeler() {
+        const deleteCounter = counter$.next(counterValue - 1)
     }
 
     return (
         <div>
-            <button onClick={e => counterHandler(e)}>Clik Me!</button>
+            <button onClick={e => addCounterHandler(e)}>+</button>
+            <button onClick={e => deleteCounterHandeler(e)}>-</button>
             <div>
                 Currnet user's: {testingCounter.userCount}.
             </div>

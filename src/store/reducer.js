@@ -1,6 +1,7 @@
 import {
     USER_COUNT_CHANGED,
-    COUNTING
+    ADD_COUNT,
+    DELETE_COUNT
 } from './actionTypes';
 
 const initialState = {
@@ -12,8 +13,8 @@ export function rootReducer(state = initialState, { type, payload }) {
     switch (type) {
         case USER_COUNT_CHANGED:
             return { ...state, userCount: payload };
-        case COUNTING:
-            return { ...state, counter: state.counter + 1 }
+        case ADD_COUNT:
+            return { ...state, counter: payload }
         default:
             return state;
     }
