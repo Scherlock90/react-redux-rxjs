@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 
-
 const counter$ = new BehaviorSubject(0);
 const observableOnlyChanged = counter$.pipe(distinctUntilChanged());
 

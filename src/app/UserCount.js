@@ -7,6 +7,7 @@ function UserCount() {
         userCount: state.userCount,
         counter: state.counter
     }));
+
     const counterValue = useSubscribe(counter$);
 
     function counterHandler() {
