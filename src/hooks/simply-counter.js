@@ -18,13 +18,13 @@ function useSimplyCounter(observable$) {
         const addCounter = counter$.next(value + 1)
     }
 
-    function deleteCounterHandeler() {
+    function deleteCounterHandler() {
         const deleteCounter = counter$.next(value - 1)
     }
 
     return {
         addCounterHandler,
-        deleteCounterHandeler,
+        deleteCounterHandler,
         value
     };
 }

@@ -10,14 +10,14 @@ function UserCount() {
 
     const {
         addCounterHandler,
-        deleteCounterHandeler,
+        deleteCounterHandler,
         value
     } = useSimplyCounter(counter$);
 
     return (
         <div>
             <button onClick={e => addCounterHandler(e)}>+</button>
-            <button onClick={e => deleteCounterHandeler(e)}>-</button>
+            <button onClick={e => deleteCounterHandler(e)}>-</button>
             <div>
                 Currnet user's: {testingCounter.userCount}.
             </div>
