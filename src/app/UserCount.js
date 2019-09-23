@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useSubscribe, counter$ } from '../hooks/simply-counter';
+import { useSimplyCounter, counter$ } from '../hooks/simply-counter';
 
 function UserCount() {
     const testingCounter = useSelector(state => ({
@@ -8,15 +8,11 @@ function UserCount() {
         counter: state.counter
     }));
 
-    const counterValue = useSubscribe(counter$);
-
-    function addCounterHandler() {
-        const addCounter = counter$.next(counterValue + 1)
-    }
-
-    function deleteCounterHandeler() {
-        const deleteCounter = counter$.next(counterValue - 1)
-    }
+    const {
+        addCounterHandler,
+        deleteCounterHandeler,
+        value
+    } = useSimplyCounter(counter$);
 
     return (
         <div>
@@ -26,7 +22,7 @@ function UserCount() {
                 Currnet user's: {testingCounter.userCount}.
             </div>
             <div>
-                Date to rxjs: {counterValue}
+                Date to rxjs: {value}
             </div>
             <div>
                 DAte to redux-rxjs: {testingCounter.counter}

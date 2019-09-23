@@ -5,7 +5,7 @@ import { distinctUntilChanged } from 'rxjs/operators';
 const counter$ = new BehaviorSubject(0);
 const observableOnlyChanged = counter$.pipe(distinctUntilChanged());
 
-function useSubscribe(observable$) {
+function useSimplyCounter(observable$) {
     const [value, update] = useState();
 
     useEffect(() => {
@@ -13,7 +13,20 @@ function useSubscribe(observable$) {
         return () => subscribeValue.unsubscribe();
     }, [observable$]);
 
-    return value;
+
+    function addCounterHandler() {
+        const addCounter = counter$.next(value + 1)
+    }
+
+    function deleteCounterHandeler() {
+        const deleteCounter = counter$.next(value - 1)
+    }
+
+    return {
+        addCounterHandler,
+        deleteCounterHandeler,
+        value
+    };
 }
 
 counter$.subscribe({
@@ -24,6 +37,6 @@ counter$.subscribe({
 
 export {
     counter$,
-    useSubscribe,
+    useSimplyCounter,
     observableOnlyChanged as CounterDataSources
 };
