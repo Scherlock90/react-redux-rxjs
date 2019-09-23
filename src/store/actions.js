@@ -8,6 +8,6 @@ export function userCountChanged(count) {
     return { type: USER_COUNT_CHANGED, payload: count };
 }
 
-export function onCountWithRxjs(count) {
+export function onCountWithRxJS(count) {
     return { type: ADD_COUNT, payload: count }
 }
