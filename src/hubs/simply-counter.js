@@ -16,7 +16,6 @@ let actionHandler = null;
 
 function createActionHandler(store) {
     actionHandler = new CounterActionHandler(store);
-    console.log(store)
 }
 
 function getActionHandler() {
@@ -31,7 +30,6 @@ function bindActions() {
 }
 
 export function init(store) {
-    console.log('hub simply-counter init');
     createActionHandler(store);
     bindActions();
 }

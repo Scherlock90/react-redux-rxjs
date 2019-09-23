@@ -29,7 +29,6 @@ function bindActions() {
 }
 
 export function init(store) {
-    console.log('hub init');
     createActionHandler(store);
     bindActions();
 }
