@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 
 const counter$ = new BehaviorSubject(0);
