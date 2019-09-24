@@ -1,10 +1,17 @@
-@mixin border-box($weightLeft, $weightRight, $weightTop, $weightBottom, $padding, $color, $display, $justifyContent)
-{
+@mixin border-box(
+    $weightLeft,
+    $weightRight,
+	$weightTop,
+	$weightBottom,
+	$padding,
+	$color,
+	$display,
+    $justifyContent
+) {
     display: $display;
     justify-content: $justifyContent;
     padding: $padding;
-    border-left: $color $weightLeft solid;
-    border-right: $color $weightRight solid;
-    border-top: $color $weightTop solid;
-    border-bottom: $color $weightBottom solid;
+    border-style: solid;
+    border-color: $color;
+    border-width: $weightTop $weightRight $weightBottom $weightLeft;
 }
