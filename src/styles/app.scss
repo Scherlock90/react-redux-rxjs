@@ -5,7 +5,7 @@
 //code
 .container-box{
     margin: 2rem;
-    @include border-box(2px, 2px, 5px, 5px, 2rem, $main-color, grid, center);
+    @include border-box(2px, 2px, 5px, 5px, 2rem, $mainColor, grid, center);
     .container-buttons{
         display: flex;
         justify-content: center;
@@ -18,11 +18,11 @@
             height: 50px;
             &-lft{
                 background-color: red;
-                color: $white-color;
+                color: $whiteColor;
             }
             &-rgt{
                 background-color: blue;
-                color: $white-color;
+                color: $whiteColor;
             }
         }
     }
