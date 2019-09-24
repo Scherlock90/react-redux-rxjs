@@ -1,3 +1,7 @@
+//@ts-check
+
+
+
 import { useState, useEffect } from 'react';
 import { BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
@@ -7,6 +11,7 @@ const counter$ = new BehaviorSubject(0);
 const observableOnlyChanged = counter$.pipe(distinctUntilChanged());
 
 function useSimplyCounter(observable$) {
+
     const [value, update] = useState();
 
     useEffect(() => {
@@ -24,8 +29,17 @@ function useSimplyCounter(observable$) {
     }
 
     return {
+        /**
+        * @type function
+        */
         addCounterHandler,
+        /**
+        * @type function
+        */
         deleteCounterHandler,
+        /**
+        * @type {{value: number}}
+        */
         value
     };
 }
