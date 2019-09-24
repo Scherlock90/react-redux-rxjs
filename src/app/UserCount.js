@@ -18,8 +18,18 @@ function UserCount() {
     return (
         <div className="container-box">
             <div className="container-buttons">
-                <button className="button-counter btn-lft" onClick={e => addCounterHandler(e)}>+</button>
-                <button className="button-counter btn-rgt" onClick={e => deleteCounterHandler(e)}>-</button>
+                <button
+                    className="button-counter btn btn-lft"
+                    onClick={e => addCounterHandler(e)}
+                >
+                    +
+                </button>
+                <button
+                    className="button-counter btn btn-rgt"
+                    onClick={e => deleteCounterHandler(e)}
+                >
+                    -
+                </button>
             </div>
             <div>
                 Currnet user's: {testingCounter.userCount}.
@@ -28,7 +38,7 @@ function UserCount() {
                 Date to rxjs: {value}
             </div>
             <div>
-                DAte to redux-rxjs: {testingCounter.counter}
+                DAte to redux from rxjs: {testingCounter.counter}
             </div>
         </div>
     )
