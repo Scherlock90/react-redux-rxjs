@@ -1,7 +1,4 @@
 //@ts-check
-
-
-
 import { useState, useEffect } from 'react';
 import { BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
