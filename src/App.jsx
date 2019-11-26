@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Routes from './app/Navigation/Route';
-import { BrowserRouter, } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import AtmosphereMenu from 'react-atmosphere-menu';
 import { navbarRoutes } from './app/Navigation/utils';
 import WrapperToHamburgerMenu from './app/Navigation/WrapperToHamburgerMenu';
@@ -13,7 +13,7 @@ function App() {
      
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <AtmosphereMenu
           active={isActiveMenu}
           nav={navbarRoutes}
@@ -27,7 +27,7 @@ function App() {
           />
           <Routes />
         </AtmosphereMenu>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

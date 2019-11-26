@@ -1,4 +1,12 @@
 export const navbarRoutes = [
-  { id: 'home', label: 'Home', path: '/' },
-  { id: 'userCount', label: 'UserCount', path: '/user-count' },
+  {
+    id: 'home',
+    label: 'Home',
+    path: '#/home'
+  },
+  {
+    id: 'userCount',
+    label: 'Count',
+    path: '#/count'
+  },
 ];
